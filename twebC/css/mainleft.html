@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="/css/main_left.css">
+<script type="text/javascript" language="javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#firstpane p.menu_head").click(function(){
+		$(this).css({backgroundImage:"url()"}).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+       	$(this).siblings().css({backgroundImage:"url()"});
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="menu fleft">
+	<div class="menu_lm">南阳天后医疗美容</div>
+	<div id="firstpane" class="menu_list">
+		<!-- -->
+		<p class="menu_head">派单管理</p>
+		<div class="menu_body">
+			<ul>
+				<li><a href="/yylist" target="mainFrame">>>&nbsp;派单列表</a></li>
+			</ul>
+		</div>
+		<p class="menu_head">对单管理</p>
+		<div class="menu_body">
+			<ul>
+				<li><a href="/admin/yylogin/forsingle" target="mainFrame">>>&nbsp;对单管理</a></li>
+			</ul>
+		</div>
+        <p class="menu_head">专员管理</p>
+		<div class="menu_body">
+			<ul>
+				<li><a href="/admin/yylogin/ulist" target="mainFrame">>>&nbsp;专员列表</a></li>
+			</ul>
+		</div>
+        <p class="menu_head">医院信息</p>
+		<div class="menu_body">
+			<ul>
+				<li><a href="/admin/yylogin/yyinfo" target="mainFrame">>>&nbsp;医院资料</a></li>
+                <li><a href="/admin/yylogin/yyabout" target="mainFrame">>>&nbsp;医院简介</a></li>
+                <li><a href="/admin/yylogin/yypicture" target="mainFrame">>>&nbsp;医院环境</a></li>
+                <li><a href="/admin/yylogin/doctor" target="mainFrame">>>&nbsp;医生管理</a></li>
+			</ul>
+		</div>
+          
+		<p class="menu_head">高级设置</p>
+		<div class="menu_body">
+			<ul>
+				<li><a href="/admin/yylogin/password" target="mainFrame">>>&nbsp;修改密码</a></li>
+				<li><a href="/admin/yylogin/feedback" target="mainFrame">>>&nbsp;意见反馈</a></li>
+			</ul>
+		</div>	
+		<!-- -->
+	</div>
+	<div class="menu_exit"><a href="/admin/yylogin/logout" title="记住密码将被清空">安全退出</a></div>
+</div>
+</body>
+</html>
+

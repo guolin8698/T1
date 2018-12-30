@@ -1,0 +1,56 @@
+*{padding:0; margin:0;}
+/*body{background:url(../images/bg.gif) repeat-x #ae5da1; font-size:12px;}.denglu_div{ background:url(../images/denglu0_02.jpg) repeat-x;}*/
+body{background:url(../images/denglu0_02n.jpg) #ffcccc repeat; font-size:12px;}
+
+.denglu_div{}
+.denglu_div .denglu_conter{ width:460px; margin:128px auto 0px; height:84px; text-align:center;}
+.denglu_conter_r{height:125px; width:460px; margin:0 auto;}
+.denglu_conter_rl{ width:151px; height:123px; float:left; overflow:hidden;}
+.denglu_conter_rz{ width:233px;  height:125px; float:left; overflow:hidden; padding-left:3px;}
+.denglu_conter_rz_div1{ height:25px; padding-top:1px; margin:0px 0px 5px 0px; padding-left:69px; background:url(../images/denglu00_12.jpg) no-repeat;}
+.denglu_conter_rz_div2{ height:25px; padding-top:2px; margin:0px 0px 5px 0px; padding-left:69px; background:url(../images/denglu0_19.jpg) no-repeat;}
+.denglu_conter_rz_div3{ height:25px; padding-top:2px; margin:0px 0px 1px 0px; padding-left:69px; background:url(../images/denglu0_22.jpg) no-repeat;}
+.denglu_conter_rz_div4{ height:25px; padding-top:2px; padding-left:69px; background:url(../images/denglu0_25.jpg) no-repeat;}
+.denglu_conter_rr{ width:59px; height:60px; float:left; padding:20px 0px 0px 7px;background:url(../images/denglu0_15.jpg) no-repeat;}
+.denglu_conter_2{ width:210px; height:55px; margin:20px auto 0px;}
+
+.t1{width:472px; height:255px; margin:0 auto; background:url(../images/t1.gif) no-repeat;}
+.t2{width:472px; height:188px; margin:0 auto; background:url(../images/t2.gif) no-repeat; color:#fff; position:relative;}
+.t2 .login{
+	position: absolute;
+	left: 327px;
+	top: 30px;
+}
+.t2 .username{
+	position: absolute;
+	left: 110px;
+	top: 20px;
+	width:172px;
+	line-height:24px;
+}
+.t2 .password{
+	position: absolute;
+	left: 110px;
+	top: 45px;
+	width:172px;
+	line-height:24px;
+}
+.t2 .q{
+	position: absolute;
+	left: 110px;
+	top: 70px;
+	width:172px;
+	line-height:24px;
+	
+	height:43px;
+	padding-top:2px;
+}
+.t2 .ask{
+	position: absolute;
+	left: 110px;
+	top: 95px;
+	width:172px;
+	line-height:24px;
+}
+#equestion{ margin:0; padding:0; height:21px; border:none; }
+.input_style1{height:21px;  width:120px;border:none; font-size:14px; line-height:22px; font-weight:bold; color:#333; padding:0 5px;}

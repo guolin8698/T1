@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+.edit{
+	width: 1048px;
+	height: auto;
+	margin: 0px auto;
+	border: 1px;
+	background-color: rgba(95, 184, 120, 0.8);
+	padding: 1px;
+	position: relative;
+	color:chocolate;
+}

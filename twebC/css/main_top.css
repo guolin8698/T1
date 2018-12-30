@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+html,body{ height:65px; border-bottom:#999999 1px solid; font:12px/1.5 simsun;/* background:url(images/topbg.png) repeat-x;*/  background: #64B5EC;font-family:"Century Gothic","Microsoft yahei";}
+#warpper{width:1024px;margin:0 auto;height:auto;}
+
+table{border-collapse:collapse;}
+img{border:none;}
+a{color:#000;text-decoration:none;}
+a:hover{color:#F33;}
+ul.no,ul.no li,dl.no,dl.no dt,dl.no dd{list-style:none; margin:0; padding:0;}
+input,select,button{font:12px Verdana,Arial,Tahoma;vertical-align:middle;}
+.red{color:red;}
+.center{text-align:center;}
+.fleft{float:left;}
+.fright{float:right;}
+.clear{clear:both;height:0;overflow:hidden;}
+.pointer{cursor:pointer;}
+.hide{display:none;}
+.ovf{overflow:hidden;}
+.biankuang{border-color:#00FF00;border-width:1px;border-style:solid;}
+.subbottom{ height:30px; line-height:30px; width:100px;}
+
+.main_top{ height:65px;margin: 0px 0px 0px 8px;}
+.main_top .logo{ height:65px; line-height:65px; color:#fff; font-size:24px; font-weight:600; float:left;}
+.main_top span{  height: 65px; line-height: 65px; font-size: 14px; float: right;width: 470px;padding-left: 70px;/* margin-right: 30px; */ text-align: right;  background: url(../images/ba2.png);
+ /* background: url(images/2.jpg);*/}
+.main_top span .newstime{  float: left; padding-top: 40px; color: #fff;}
+.main_top .newstime #areabox{ height:22px; line-height:22px;}
+.main_top span .menu{ padding-top:18px; margin-right:30px;}
+.main_top span .menu a{ color:#FFFFFF;}
+
+.main_gg{ float:left; padding-left:50px; padding-top:25px; text-align:left; font-size:13px; color:#FF0000;}

@@ -1,0 +1,47 @@
+body{
+	background-image: url(../picture/2.jpg);
+	background-size: cover;
+}
+.login{
+	width: 1050px;
+	height: 2250px;
+	margin: 100px auto;
+	border: 1px;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 1px;
+	position: relative;
+	color: #A1E40A;
+}
+.sdesc{   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 100%;
+}
+
+.rightpic{
+	width:500px;
+	height:330px;
+	position:absolute;
+	right:30px;
+	top:30px;
+	opacity: 0.8;
+}
+#container{	
+	position: relative;
+	width:500px;
+	height:330px;
+}
+canvas{ position: absolute;
+ 		backface-visibility: hidden; 
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+	 	-ms-backface-visibility: hidden;
+}
+img {
+	position: absolute;
+	-webkit-transition: opacity .3s;
+	transition: opacity .3s;
+	left: 3px;
+	width: 45px;
+	height: 68px;
+}

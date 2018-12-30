@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+<title>用户登录</title>
+</head>
+
+<body>
+	<div align="center">
+<h3>用户登录</h3>
+	<form action="loginB.php" method="post">
+		<p>账号:<input type="text" name="name" id="name"></p>
+		<span id = "checkok" style="color:chartreuse"></span>
+		<span id = "warning" style="color:red" ></span>
+		<p>密码:<input type="password" name="password" id="password"></p>
+		<p><input type="submit" id="submit" value="提交"><input type="reset" name="button" id="relogin" value="重置" /></p>
+		<p></p>
+		<p id="tips"></p>
+		</form>
+		</div>
+</body>
+	<script>
+	var user = document.getElementById('name');
+		user.onblur = function(){
+		//1，创建AJAX对象
+			var xhr = new XMLHttpRequest();
+		//2,创建请求事件的监听 ,并给它回调function（自身self）	
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					//console.log( xhr.responseText);
+				//解析返回的jason字符串
+	     	        if(xhr.responseText==0){
+						var warning = document.getElementById('warning');
+						warning.innerHTML='用户不存在，请核实后重新输入';
+						document.getElementById('submit').disabled =true;	 
+					    
+						     
+						//}
+					//var json = JSON.parse(xhr.responseText);
+					//var tips = document.getElementById('tips');
+				      //   tips.innerHTML='json';
+					} else { 
+						var checkok = document.getElementById('checkok');
+						    checkok.innerHTML='√ 用户核实通过，请输入密码';
+						
+						
+					}
+				}
+				
+			}
+		//3，初始化一个URL请求
+			var user= document.getElementById('name').value;
+			//var password= document.getElementById('password').value;
+			//var data='name='+user+'&password='+password; //生成POST请求数据
+			var data='name='+user; 
+			var url='check.php'; //生成url地址
+			xhr.open('post',url,true);
+			//4,设置请求头
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			
+			//5，发送请求
+			
+			xhr.send(data);
+			
+			//var submit = document.getElementById('submit');
+			//submit.onclick=function(){
+				//tips.innerHTML ='验证通过，正在提交';
+				//tips.innerHTML='欢迎用户'+json.name+'回来';
+			//}
+			var relogin = document.getElementById('relogin');
+			     relogin.onclick=function(){
+				 warning.innerHTML='';
+					 checkok.innerHTML='';
+				 document.getElementById('submit').disabled =false;	 
+					  }
+			//return false;//禁止sumbit提交按钮的默认行为
+				
+			//return false;
+		}
+	</script>
+	<script>
+		
+</script>
+					 
+		</html>

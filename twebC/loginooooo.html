@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/base.css">  -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/b_login.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/stye.css">
+<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+	<title>&nbsp; 登录页面</title>
+	
+
+	<script type ="text/javascript">
+	   function showreg(){
+           var divlog = document.getElementById('divlog');
+		   var divreg = document.getElementById('divreg') ;
+			  
+		   
+		 if (divlog.style.display=="block")divlog.style.display="none";
+		   else divlog.style.display="block";
+	   
+	if(divreg.style.display =="none")divreg.style.display="block" ;
+		                         
+		   else divreg.style.display="none";	
+	
+		}
+	</script>
+
+</head>
+
+<body>
+	
+<title></title>
+
+
+<body>
+	
+	<div align="center">
+
+		<div id="divlog" style="display:block;">
+<div class="denglu_div">
+	<div class="denglu_conter"><img src="images/denglu0_05.png"></div>
+    
+    <div class="denglu_conter_r">
+		<div class="denglu_conter_rl"><img src="images/denglu0_09.jpg" width="151" height="123"></div>
+        <div class="denglu_conter_rz">
+		<form id="login" method="post" action="loginB.php">
+        
+        	<br />
+	
+		<div class="denglu_conter_rz_div1"><input title="请输入用户名" class="input_style1" type="text" name="name" id="name"></div>			
+		<span id = "checkok" style="color:chartreuse"></span>
+		<span id = "warning" style="color:red" ></span>
+		<div class="denglu_conter_rz_div2"><input title="请输入密码"  class="input_style1" type="password" name="password" id="password"></div>
+			
+		<p><input type="submit" id="submit" value="登录"><input type="reset" name="button" id="relogin" value="重置" /><input type="button" value="注册用户"  onClick="showreg();" ></p>
+		<p></p>
+		<p id="tips"></p>
+		
+		
+                     
+			<br />
+               
+			<br />
+			</form>
+			
+		 <!--<div class="denglu_conter_rr"><input title="点此登录" src="images/denglu0_15.jpg" type="image"></div> -->
+        <!--div><input type="submit" name="submit" value=""  class="denglu_conter_rr"></div-->
+			
+        
+			
+			</div>
+    
+	</div>
+</div>	
+		
+	<script>
+	var user = document.getElementById('name');
+		user.onblur = function(){
+		//1，创建AJAX对象
+			var xhr = new XMLHttpRequest();
+		//2,创建请求事件的监听 ,并给它回调function（自身self）	
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					//console.log( xhr.responseText);
+				//解析返回的jason字符串
+	     	        if(xhr.responseText==0){
+						var warning = document.getElementById('warning');
+						warning.innerHTML='用户不存在，请核实后重新输入';
+						document.getElementById('submit').disabled =true;	 
+					    
+						     
+						//}
+					//var json = JSON.parse(xhr.responseText);
+					//var tips = document.getElementById('tips');
+				      //   tips.innerHTML='json';
+					} else { 
+						var checkok = document.getElementById('checkok');
+						    checkok.innerHTML='√ 用户核实通过，请输入密码';
+						
+						
+					}
+				}
+				
+			}
+		//3，初始化一个URL请求
+			var user= document.getElementById('name').value;
+			//var password= document.getElementById('password').value;
+			//var data='name='+user+'&password='+password; //生成POST请求数据
+			var data='name='+user; 
+			var url='check.php'; //生成url地址
+			xhr.open('post',url,true);
+			//4,设置请求头
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			
+			//5，发送请求
+			
+			xhr.send(data);
+			
+			//var submit = document.getElementById('submit');
+			//submit.onclick=function(){
+				//tips.innerHTML ='验证通过，正在提交';
+				//tips.innerHTML='欢迎用户'+json.name+'回来';
+			//}
+			var relogin = document.getElementById('relogin');
+			     relogin.onclick=function(){
+				 warning.innerHTML='';
+					 checkok.innerHTML='';
+				 document.getElementById('submit').disabled =false;	 
+					  }
+			//return false;//禁止sumbit提交按钮的默认行为
+				
+			//return false;
+		}
+	</script>
+
+
+
+
+			<!--<input type="hidden" name="enews" value="login"> <input type="hidden" name="adminwindow" value="1"> <input   name="name" type="text"> <input   type="password" name="password">-->
+        	
+           
+			
+	
+	
+	
+	
+<div id="divreg" style="display:none;">
+<div class="denglu_div">
+	<div class="denglu_conter"><img src="images/denglu0_05.png"></div>
+	
+    
+    <div class="denglu_conter_r">
+		
+		<div class="denglu_conter_rl"><img src="images/denglu0_09.jpg" width="151" height="123"></div>
+        <form  method="post" action="reg.php">
+        <div class="denglu_conter_rz">
+        	<br />
+			<!--<input type="hidden" name="enews" value="login"> <input type="hidden" name="adminwindow" value="1"> -->
+        	姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="name"><br>
+            密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" ><br>
+	        确认密码：<input type="password" name="repassword">
+	<br /><input type="submit" value="注册用户" >
+			<input type="button" value="返回登录"  onClick="showreg();" />
+			
+			<br />
+                </div>
+			<br />
+		 <!--<div class="denglu_conter_rr"><input title="点此登录" src="images/denglu0_15.jpg" type="image"></div> -->
+       
+			
+        </form>
+    </div>
+	</div>
+</div>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</body>	
+	
+	
+	
+	
+
+</html>
