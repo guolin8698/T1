@@ -162,6 +162,32 @@ function showTime() {
 	</script>
 		
 	<title>后台页面</title>
+	<style>
+	
+	
+a:link { 
+color:#FF0000; 
+text-decoration:underline; 
+} 
+a:visited { 
+color:#00FF00; 
+text-decoration:none; 
+} 
+a:hover { 
+color:#000000; 
+text-decoration:none; 
+} 
+a:active { 
+color:#FFFFFF; 
+text-decoration:none; 
+} 
+		
+		
+	
+	
+	</style>
+	
+	
 </head>
 <body onload="showTime();" class="sidebar-expanded" style="">
 	
@@ -250,7 +276,7 @@ function showTime() {
 	  
 	   <img src="images/Klogo.png" width="48" height="64"><br ;/>
 	   
-	 <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;管理系统</h2>
+	 <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三方信息管理系统</h2>
 	   <br>
 	  <div class="newstime"><div id="areabox"></div></div>
 	   <div class="col-lg-6">
@@ -269,14 +295,144 @@ function showTime() {
    </h4> <form>
  输入手机号：<input type="text" name="spnumber" id="spnumber" placeholder="输入手机号"><button id="spnumberb">查询</button><input id="rep" name="button" type="reset" value="重置">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	  项目内容查询：<input type="text" name="sproject" id="sproject" placeholder="请输入项目关键字"><button id="sprojectb">查询</button><input id="reproject" name="button" type="reset" value="重置"></form>
 	   <br>
-<!--<div id="diva" style="display:none;">			          <!-- 让表单在一行中显示form-horizontal -->
+<?php
+	  
+	   
+	   
+	   
+include 'connect.php';
+
+include 'checklog.php';	   
+	   
+	   
+$count_sql = "select count(id) as c from userdata ";
+$result = mysqli_query($conn, $count_sql);
+$data = mysqli_fetch_assoc($result);
+$lcount_sql = "select count(login) as l from userdata where login = '1.宏脉'";
+$lcresult = mysqli_query($conn, $lcount_sql);
+$ldata = mysqli_fetch_assoc($lcresult);
+$smcount_sql = "select count(login) as sm from userdata where login like '%上门%'";
+$smresult = mysqli_query($conn, $smcount_sql);
+$smdata = mysqli_fetch_assoc($smresult);		   
+$cjcount_sql = "select count(login) as cj from userdata where login = '3.上门已成交'";
+$cjresult = mysqli_query($conn, $cjcount_sql);
+$cjdata = mysqli_fetch_assoc($cjresult);	
+		   //得到总的用户数
+$count = $data['c'];
+$lcount = $ldata['l'];		   
+$smcount = $smdata['sm'];		   
+$smlcount = $smcount/$count*100;
+$cjcount = $cjdata['cj'];
+$cjlcount = $cjcount/$smcount*100;		   
+
+   
+		   
+$tmdates= date("Y-m-01", time());
+$tmdatee= date('Y-m-t', time());		   
+$ctmdates= strtotime($tmdates);
+$ctmdatee= strtotime($tmdatee)+60*60*24*1-1;	
+$tmcount_sql = "select count(id) as c from userdata where `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee' ";
+$tmresult = mysqli_query($conn, $tmcount_sql);
+$tmdata = mysqli_fetch_assoc($tmresult);
+$tmlcount_sql = "select count(login) as l from userdata where login = '1.宏脉' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmlcresult = mysqli_query($conn, $tmlcount_sql);
+$tmldata = mysqli_fetch_assoc($tmlcresult);
+$tmsmcount_sql = "select count(login) as sm from userdata where login like '%上门%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee' ";
+$tmsmresult = mysqli_query($conn, $tmsmcount_sql);
+$tmsmdata = mysqli_fetch_assoc($tmsmresult);		   
+$tmcjcount_sql = "select count(login) as cj from userdata where login = '3.上门已成交' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmcjresult = mysqli_query($conn, $tmcjcount_sql);
+$tmcjdata = mysqli_fetch_assoc($tmcjresult);
+		   
+$tmcount = $tmdata['c'];
+$tmlcount = $tmldata['l'];		   
+$tmsmcount = $tmsmdata['sm'];		   
+$tmsmlcount = $tmsmcount/$tmcount*100;
+$tmcjcount = $tmcjdata['cj'];
+$tmcjlcount = $tmcjcount/$tmsmcount*100;	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   ?>	   
+<!--	   
+<h6>	   
+ <table border="0" width="100%" >
+  <tr><td colspan="12" align="center" style="font-size: 16px">统计信息</td></tr>
+		<tr>
+    <th align="center" >总记录数<td>总计<?php echo $count ?>条</td></th>
+    <th align="center" >总上门量<td><?php echo $smcount ?></td></th>
+	  <th align="center" >总上门率<td><?php echo round($smlcount,2) ?>%</td></th>
+	  <th align="center" >总成交<td><?php echo $cjcount ?></td></th>
+	  <th align="center" >总成交率<td><?php echo round($cjlcount,2) ?>%</td></th>
+	  <th align="left" >宏脉登记<td>总计<?php echo $lcount ?>条</td></th>		
+  </tr>
+  	<th height="30px">本月总记录数</th> <td   height="30px" style="color:green" colspan="2"><?php echo $tmcount?>条</td>	
+	<tr><th height="30px">本月上门量</th><td  height="30px" style="color:green" colspan="2"><?php echo $tmsmcount?></td></tr>
+	 <tr><th height="30px">本月上门率</th> <td height="30px"  style="color:green" colspan="2"><?php echo round($tmsmlcount,2)?>%</td></tr>
+		<tr><th height="30px">本月成交</th><td  height="30px" style="color:green" colspan="2"><?php echo $tmcjcount?></td></tr> 
+		<tr><th height="30px">本月成交率</th> <td height="30px"  style="color:green" colspan="2"><?php echo round($tmcjlcount,2)?>%</td></tr>
+	 <tr><th height="30px">本月宏脉登记</th> <td height="30px"  style="color:green" colspan="2"><?php echo $tmlcount?>条</td></tr>
+</table></h6>
+	   -->
+	   
+	   
+
+	   
+	   
+	   
+	   
+<table border="1" width="100%" >
+	<tr><td colspan="12" align="center" style="font-size: 16px">统计信息</td></tr> </table>
+<table border="0" width="100%" >
+	<tr>
+			
+    <th align="center" >总记录数<td style="color:aqua">总计<?php echo $count ?>条</td></th>
+    <th align="center" >总上门量<td style="color:aqua"><?php echo $smcount ?></td></th>
+	  <th align="center" >总上门率<td style="color:aqua"><?php echo round($smlcount,2) ?>%</td></th>
+	  <th align="center" >总成交<td style="color:aqua"><?php echo $cjcount ?></td></th>
+	  <th align="center" >总成交率<td style="color:aqua"><?php echo round($cjlcount,2) ?>%</td></th>
+	  <th align="left" >宏脉登记<td style="color:aqua">总计<?php echo $lcount ?>条</td></th>		
+  </tr>	   
+</table>	   
+<table border="0" width="100%" >
+ 
+    <th align="center" >本月总记录数<td style="color:darkorange">总计<?php echo $tmcount ?>条</td></th>
+    <th align="center" >本月上门量<td style="color:darkorange"><?php echo $tmsmcount ?></td></th>
+	  <th align="center" >本月上门率<td style="color:darkorange"><?php echo round($tmsmlcount,2) ?>%</td></th>
+	  <th align="center" >本月成交量为<td style="color:darkorange"><?php echo $tmcjcount ?></td></th>
+	  <th align="center" >本月成交率<td style="color:darkorange"><?php echo round($tmcjlcount,2) ?>%</td></th>
+	  <th align="left" >本月宏脉登记<td style="color:darkorange">总计<?php echo $tmlcount ?>条</td></th>		
+  </tr>	   
+</table>	   	   
+	   
+	   
+	   
+	   
+	
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   <!--<div id="diva" style="display:none;">			          <!-- 让表单在一行中显示form-horizontal -->
 	   <p id="mainshow">
 	<dir id="deshow" style="display:block;">
 	   <h6>
 <?php
-include 'connect.php';
 
-include 'checklog.php';
 	
 //找session
 // if (empty($_SESSION['name']) && isset($_SESSION['id']))
@@ -289,18 +445,75 @@ include 'checklog.php';
 //}
 //else{
 
-
+/*
 if ($ulimits==1){$count_sql = "select count(id) as c from userdata";} else {
 $count_sql = "select count(id) as c from userdata where limits = '$ulimits'";}
-
 $result = mysqli_query($conn, $count_sql);
-
 $data = mysqli_fetch_assoc($result);
-
-//得到总的用户数
+$lcount_sql = "select count(login) as l from userdata where login = '1.宏脉'";
+$lcresult = mysqli_query($conn, $lcount_sql);
+$ldata = mysqli_fetch_assoc($lcresult);
+$smcount_sql = "select count(login) as sm from userdata where login like '%上门%'";
+$smresult = mysqli_query($conn, $smcount_sql);
+$smdata = mysqli_fetch_assoc($smresult);		   
+$cjcount_sql = "select count(login) as cj from userdata where login = '3.上门已成交'";
+$cjresult = mysqli_query($conn, $cjcount_sql);
+$cjdata = mysqli_fetch_assoc($cjresult);	
+		   //得到总的用户数
 $count = $data['c'];
+$lcount = $ldata['l'];		   
+$smcount = $smdata['sm'];		   
+$smlcount = $smcount/$count*100;
+$cjcount = $cjdata['cj'];
+$cjlcount = $cjcount/$smcount*100;		   
 
-$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+   
+		   
+$tmdates= date("Y-m-01", time());
+$tmdatee= date('Y-m-t', time());		   
+$ctmdates= strtotime($tmdates);
+$ctmdatee= strtotime($tmdatee)+60*60*24*1-1;	
+$tmcount_sql = "select count(id) as c from userdata where `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee' ";
+$tmresult = mysqli_query($conn, $tmcount_sql);
+$tmdata = mysqli_fetch_assoc($tmresult);
+$tmlcount_sql = "select count(login) as l from userdata where login = '1.宏脉' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmlcresult = mysqli_query($conn, $tmlcount_sql);
+$tmldata = mysqli_fetch_assoc($tmlcresult);
+$tmsmcount_sql = "select count(login) as sm from userdata where login like '%上门%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee' ";
+$tmsmresult = mysqli_query($conn, $tmsmcount_sql);
+$tmsmdata = mysqli_fetch_assoc($tmsmresult);		   
+$tmcjcount_sql = "select count(login) as cj from userdata where login = '3.上门已成交' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmcjresult = mysqli_query($conn, $tmcjcount_sql);
+$tmcjdata = mysqli_fetch_assoc($tmcjresult);
+		   
+$tmcount = $tmdata['c'];
+$tmlcount = $tmldata['l'];		   
+$tmsmcount = $tmsmdata['sm'];		   
+$tmsmlcount = $tmsmcount/$tmcount*100;
+$tmcjcount = $tmcjdata['cj'];
+$tmcjlcount = $tmcjcount/$tmsmcount*100;		   
+		   
+		   
+		   
+		   
+		   
+*/		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+
+		   
+		   
+		   
+		   
+ $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 
 /*
 if (isset($_GET['page'])) {
@@ -385,7 +598,37 @@ if ($result && mysqli_num_rows($result)) {
 	  echo '<td><input id='. $row['id'] .' type="button" value="查看详情"  data-toggle="modal" data-target=".bs-example-modal-lg" onclick="ldesc(this.id)"></td>';
 	  echo '</tr>';
  }
-echo '<tr><td colspan="14"><input id='. 1 .' type="button" value="首页" onclick="upage(this.id)"> <input id='. ($page - 1) .' type="button" value="上一页" onclick="upage(this.id)"> <input id='. ($page + 1) .' type="button" value="下一页" onclick="npage(this.id)">  <input id=' . $total . ' type="button" value="尾页" onclick="upage(this.id)"> 当前是第 ' . $page . '页 共' . $total . '页    总计：'.$count.'条记录</td></tr>';
+
+	echo '<tr><td colspan="14"><input id='. 1 .' type="button" value="首页" onclick="upage(this.id)"> <input id='. ($page - 1) .' type="button" value="上一页" onclick="upage(this.id)"> <input id='. ($page + 1) .' type="button" value="下一页" onclick="npage(this.id)">  <input id=' . $total . ' type="button" value="尾页" onclick="upage(this.id)"> 当前是第 ' . $page . '页 共' . $total . '页  总计：'.$count.'条记录 </td></tr>';
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//echo '<tr><td colspan="14"><input id='. 1 .' type="button" value="首页" onclick="upage(this.id)"> <input id='. ($page - 1) .' type="button" value="上一页" onclick="upage(this.id)"> <input id='. ($page + 1) .' type="button" value="下一页" onclick="npage(this.id)">  <input id=' . $total . ' type="button" value="尾页" onclick="upage(this.id)"> 当前是第 ' . $page . '页 共' . $total . '页 <br> 本月总计：'.$tmcount.'条记录 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 本月宏脉记录为'.$tmlcount.'条   |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 本月上门量为'.$tmsmcount.' |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  本月上门率为'.round($tmsmlcount,2).'%|  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|本月成交量为'.$tmcjcount.'   |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  本月成交率为'.round($tmcjlcount,2).'%|<br> 总计：'.$count.'条记录 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 录入宏脉记录为'.$lcount.'条   |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 上门量为'.$smcount.' |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  上门率为'.round($smlcount,2).'%|  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|成交量为'.$cjcount.'   |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|   成交率为'.round($cjlcount,2).'%|</td></tr>';
+	
+	
+	
+	
+	
+	
+	
+	
   /*echo '<tr><td colspan="14"><a href="mainpage.php?page=1">首页</a> <input id='. 1 .' type="button" value="首页" onclick="upage(this.id)"><a href="mainpage.php?page=' . ($page - 1) . '">上一页</a> <input id='. ($page - 1) .' type="button" value="上一页" onclick="upage(this.id)"> <a href="mainpage.php?page=' . ($page + 1) . '">下一页</a><input id='. ($page + 1) .' type="button" value="下一页" onclick="npage(this.id)"> <a href="mainpage.php?page=' . $total . '">尾页</a> <input id=' . $total . ' type="button" value="尾页" onclick="upage(this.id)"> 当前是第 ' . $page . '页 共' . $total . '页 </td></tr>'; */
 	//if ($_SESSION['limits']==1){
 //echo '<tr><td align="right" colspan="10" ><input type="submit" value="选择删除" /></td></tr>';
@@ -403,10 +646,10 @@ echo '<tr><td colspan="14"><input id='. 1 .' type="button" value="首页" onclic
 		?> </h6>
  	<br />
 </div>
-	</p>
+	   </p>
 	
 	
-	
+
 	
 	
 	
@@ -466,7 +709,7 @@ echo '<tr><td colspan="14"><input id='. 1 .' type="button" value="首页" onclic
 
    <h6>渠道名称:<select id="qdname" name="qdname">
             <option value="0" selected="selected">选择渠道名称</option>
-            <option value='<a target="_blank" href="http://crm.hyyzx.com/">1.整形168(医美汇)</a>'>1.整形168(医美汇)</option>
+            <option value='<a target="_blank"  href="http://crm.hyyzx.com/">1.整形168(医美汇)</a>'>1.整形168(医美汇)</option>
             <option value='<a target="_blank" href="http://ky.meibangzx.com/">2.美帮网</a>'>2.美帮网</option>
             <option value='<a target="_blank" href="http://duan.rouwai.com/">3.爱丽帮</a>'>3.爱丽帮</option>
             <option value='<a target="_blank" href="http://ld.meiliwuyou.cn/admin/yylogin">4.美丽无忧</a>'>4.美丽无忧</option>
