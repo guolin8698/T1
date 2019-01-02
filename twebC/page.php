@@ -352,6 +352,177 @@ $tmcjcount = $tmcjdata['cj'];
 $tmcjlcount = $tmcjcount/$tmsmcount*100;	   
 	   
 	   
+	
+	   
+	   
+	   
+	   
+	   
+	   
+$qd1count_sql = "select count(qdname) as zx168 from userdata where qdname like '%crm.hyyzx.com%1.整形168(医美汇)%'";
+$qd1cresult = mysqli_query($conn, $qd1count_sql);
+$qd1data = mysqli_fetch_assoc($qd1cresult);	 
+	   
+$qd2count_sql = "select count(qdname) as mbw from userdata where qdname like '%ky.meibangzx.com%2.美帮网%'";
+$qd2cresult = mysqli_query($conn, $qd2count_sql);
+$qd2data = mysqli_fetch_assoc($qd2cresult);	   
+	   
+$qd3count_sql = "select count(qdname) as alb from userdata where qdname like '%duan.rouwai.com%3.爱丽帮%'";
+$qd3cresult = mysqli_query($conn, $qd3count_sql);
+$qd3data = mysqli_fetch_assoc($qd3cresult);	   
+	   
+	   $qd4count_sql = "select count(qdname) as mlwy from userdata where qdname like '%ld.meiliwuyou.cn/admin/yylogin%4.美丽无忧%'";
+$qd4cresult = mysqli_query($conn, $qd4count_sql);
+$qd4data = mysqli_fetch_assoc($qd4cresult);
+	   
+	   $qd5count_sql = "select count(qdname) as nem from userdata where qdname like '%hospital.nuomeier.com/Login.aspx/\">%5.诺美尔%'";
+$qd5cresult = mysqli_query($conn, $qd5count_sql);
+$qd5data = mysqli_fetch_assoc($qd5cresult);
+	   
+	   $qd6count_sql = "select count(qdname) as mdw from userdata where qdname like '%zm.xhkykt.com/HeadQuarters/HQLogin%6.米多网%'";
+$qd6cresult = mysqli_query($conn, $qd6count_sql);
+$qd6data = mysqli_fetch_assoc($qd6cresult);	
+	   
+	   $qd7count_sql = "select count(qdname) as myw from userdata where qdname like '%www.meiyazx.com%7.美丫网%'";
+$qd7cresult = mysqli_query($conn, $qd7count_sql);
+$qd7data = mysqli_fetch_assoc($qd7cresult);	   
+	   
+	   $qd8count_sql = "select count(qdname) as hsam from userdata where qdname like '%xt.amlmr.cn%8.韩式爱美%'";
+$qd8cresult = mysqli_query($conn, $qd8count_sql);
+$qd8data = mysqli_fetch_assoc($qd8cresult);	   
+	  
+	   $qd9count_sql = "select count(qdname) as um from userdata where qdname like '%crm.youmeiw.com%9.U美-整形驿站%'";
+$qd9cresult = mysqli_query($conn, $qd9count_sql);
+$qd9data = mysqli_fetch_assoc($qd9cresult);	   
+	   
+	   $qd10count_sql = "select count(qdname) as zrw from userdata where qdname like '%kf.zhurongwang.com%10.驻容%/爱尚美%'";
+$qd10cresult = mysqli_query($conn, $qd10count_sql);
+$qd10data = mysqli_fetch_assoc($qd10cresult);	   
+	   
+	   $qd11count_sql = "select count(qdname) as bm from userdata where qdname like '%www.bemay.net/customer%11.彼美%'";
+$qd11cresult = mysqli_query($conn, $qd11count_sql);
+$qd11data = mysqli_fetch_assoc($qd11cresult);	   
+	   
+	   $qd12count_sql = "select count(qdname) as meb from userdata where qdname like '%h.meierbei.com%12.美尔贝%'";
+$qd12cresult = mysqli_query($conn, $qd12count_sql);
+$qd12data = mysqli_fetch_assoc($qd12cresult);	   
+	   
+
+	$czx168=$qd1data['zx168'];   
+	$cmbw=$qd2data['mbw'];   
+	$calb=$qd3data['alb'];   
+	$cmlwy=$qd4data['mlwy'];   
+	$cnem=$qd5data['nem'];   
+	$cmdw=$qd6data['mdw'];   
+	$cmyw=$qd7data['myw']; 
+	$chsam=$qd8data['hsam'];  
+	$cum=$qd9data['um']; 
+	$czrw=$qd10data['zrw']; 
+	$cbm=$qd11data['bm']; 
+	$cmeb=$qd12data['meb'];
+	   
+	 
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+$tmqd1count_sql = "select count(qdname) as zx168 from userdata where qdname like '%crm.hyyzx.com%1.整形168(医美汇)%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd1cresult = mysqli_query($conn, $tmqd1count_sql);
+$tmqd1data = mysqli_fetch_assoc($tmqd1cresult);	 
+	   
+$tmqd2count_sql = "select count(qdname) as mbw from userdata where qdname like '%ky.meibangzx.com%2.美帮网%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd2cresult = mysqli_query($conn, $tmqd2count_sql);
+$tmqd2data = mysqli_fetch_assoc($tmqd2cresult);	   
+	   
+$tmqd3count_sql = "select count(qdname) as alb from userdata where qdname like '%duan.rouwai.com%3.爱丽帮%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd3cresult = mysqli_query($conn, $tmqd3count_sql);
+$tmqd3data = mysqli_fetch_assoc($tmqd3cresult);	   
+	   
+	   $tmqd4count_sql = "select count(qdname) as mlwy from userdata where qdname like '%ld.meiliwuyou.cn/admin/yylogin%4.美丽无忧%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd4cresult = mysqli_query($conn, $tmqd4count_sql);
+$tmqd4data = mysqli_fetch_assoc($tmqd4cresult);
+	   
+	   $tmqd5count_sql = "select count(qdname) as nem from userdata where qdname like '%hospital.nuomeier.com/Login.aspx/\">%5.诺美尔%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd5cresult = mysqli_query($conn, $tmqd5count_sql);
+$tmqd5data = mysqli_fetch_assoc($tmqd5cresult);
+	   
+	   $tmqd6count_sql = "select count(qdname) as mdw from userdata where qdname like '%zm.xhkykt.com/HeadQuarters/HQLogin%6.米多网%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd6cresult = mysqli_query($conn, $tmqd6count_sql);
+$tmqd6data = mysqli_fetch_assoc($tmqd6cresult);	
+	   
+	   $tmqd7count_sql = "select count(qdname) as myw from userdata where qdname like '%www.meiyazx.com%7.美丫网%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd7cresult = mysqli_query($conn, $tmqd7count_sql);
+$tmqd7data = mysqli_fetch_assoc($tmqd7cresult);	   
+	   
+	   $tmqd8count_sql = "select count(qdname) as hsam from userdata where qdname like '%xt.amlmr.cn%8.韩式爱美%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd8cresult = mysqli_query($conn, $tmqd8count_sql);
+$tmqd8data = mysqli_fetch_assoc($tmqd8cresult);	   
+	  
+	   $tmqd9count_sql = "select count(qdname) as um from userdata where qdname like '%crm.youmeiw.com%9.U美-整形驿站%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd9cresult = mysqli_query($conn, $tmqd9count_sql);
+$tmqd9data = mysqli_fetch_assoc($tmqd9cresult);	   
+	   
+	   $tmqd10count_sql = "select count(qdname) as zrw from userdata where qdname like '%kf.zhurongwang.com%10.驻容%/爱尚美%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd10cresult = mysqli_query($conn, $tmqd10count_sql);
+$tmqd10data = mysqli_fetch_assoc($tmqd10cresult);	   
+	   
+	   $tmqd11count_sql = "select count(qdname) as bm from userdata where qdname like '%www.bemay.net/customer%11.彼美%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd11cresult = mysqli_query($conn, $tmqd11count_sql);
+$tmqd11data = mysqli_fetch_assoc($tmqd11cresult);	   
+	   
+	   $tmqd12count_sql = "select count(qdname) as meb from userdata where qdname like '%h.meierbei.com%12.美尔贝%' AND `createtime` >= '$ctmdates'  AND `createtime` <= '$ctmdatee'";
+$tmqd12cresult = mysqli_query($conn, $tmqd12count_sql);
+$tmqd12data = mysqli_fetch_assoc($tmqd12cresult);	   
+	   
+
+	$tmczx168=$tmqd1data['zx168'];   
+	$tmcmbw=$tmqd2data['mbw'];   
+	$tmcalb=$tmqd3data['alb'];   
+	$tmcmlwy=$tmqd4data['mlwy'];   
+	$tmcnem=$tmqd5data['nem'];   
+	$tmcmdw=$tmqd6data['mdw'];   
+	$tmcmyw=$tmqd7data['myw']; 
+	$tmchsam=$tmqd8data['hsam'];  
+	$tmcum=$tmqd9data['um']; 
+	$tmczrw=$tmqd10data['zrw']; 
+	$tmcbm=$tmqd11data['bm']; 
+	$tmcmeb=$tmqd12data['meb'];
+	   	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 	   
 	   
 	   
@@ -394,28 +565,72 @@ $tmcjlcount = $tmcjcount/$tmsmcount*100;
 	<tr>
 			
     <th align="center" >总记录数<td style="color:aqua">总计<?php echo $count ?>条</td></th>
-    <th align="center" >总上门量<td style="color:aqua"><?php echo $smcount ?></td></th>
+    <th align="center" >总上门量<td style="color:aqua"><?php echo $smcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >总上门率<td style="color:aqua"><?php echo round($smlcount,2) ?>%</td></th>
-	  <th align="center" >总成交<td style="color:aqua"><?php echo $cjcount ?></td></th>
+	  <th align="center" >总成交<td style="color:aqua"><?php echo $cjcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >总成交率<td style="color:aqua"><?php echo round($cjlcount,2) ?>%</td></th>
 	  <th align="left" >宏脉登记<td style="color:aqua">总计<?php echo $lcount ?>条</td></th>		
-  </tr>	   
-</table>	   
-<table border="0" width="100%" >
- 
-    <th align="center" >本月总记录数<td style="color:darkorange">总计<?php echo $tmcount ?>条</td></th>
-    <th align="center" >本月上门量<td style="color:darkorange"><?php echo $tmsmcount ?></td></th>
+  </tr>	
+<tr>
+	<th align="center" >本月总记录数<td style="color:darkorange">总计<?php echo $tmcount ?>条</td></th>
+      <th align="center" >本月上门量<td style="color:darkorange"><?php echo $tmsmcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >本月上门率<td style="color:darkorange"><?php echo round($tmsmlcount,2) ?>%</td></th>
-	  <th align="center" >本月成交量为<td style="color:darkorange"><?php echo $tmcjcount ?></td></th>
+	  <th align="center" >本月成交量为<td style="color:darkorange"><?php echo $tmcjcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >本月成交率<td style="color:darkorange"><?php echo round($tmcjlcount,2) ?>%</td></th>
 	  <th align="left" >本月宏脉登记<td style="color:darkorange">总计<?php echo $tmlcount ?>条</td></th>		
-  </tr>	   
-</table>	   	   
+</tr>
+</table>	   
 	   
-	   
-	   
-	   
+<table border="1" width="100%" >
+	<tr><td colspan="12" align="center" style="font-size: 16px">三方派单总量明细</td></tr> </table>	   
+	<table border="0" width="100%" >
+	<tr>
+			
+<th align="center" ><td>整形168（医美汇）</td><td style="color:gold">总计<?php echo $czx168 ?>单</td></th>
+<th align="center" ><td>美帮网</td><td style="color:gold">总计<?php echo $cmbw ?>单</td></th>
+<th align="center" ><td>爱丽帮</td><td style="color:gold">总计<?php echo $calb ?>单</td></th>
+<th align="center" ><td>美丽无忧</td><td style="color:gold">总计<?php echo $cmlwy ?>单</td></th>
+<th align="center" ><td>诺而美</td><td style="color:gold">总计<?php echo $cnem ?>单</td></th>
+<th align="center" ><td>米多网</td><td style="color:gold">总计<?php echo $cmdw ?>单</td></th>
 	
+  </tr>	 
+<tr >
+<th align="center" ><td>美丫网</td><td style="color:gold">总计<?php echo $cmyw ?>单</td></th>
+<th align="center" ><td>韩式爱美</td><td style="color:gold">总计<?php echo $chsam ?>单</td></th>
+<th align="center" ><td>U美-整形驿站</td><td style="color:gold">总计<?php echo $cum ?>单</td></th>
+<th align="center" ><td>驻容网</td><td style="color:gold">总计<?php echo $czrw ?>单</td></th>
+<th align="center" ><td>彼美网</td><td style="color:gold">总计<?php echo $cbm ?>单</td></th>
+<th align="center" ><td>美尔呗</td><td style="color:gold">总计<?php echo $cmeb ?>单</td></th>
+
+
+</tr>
+</table>	      
+	   
+<table border="0" width="100%" >
+	<tr><td colspan="12" align="center" style="font-size: 16px;color:lightblue" >本月三方派单量明细</td></tr> </table>	
+	   
+	<table border="0" width="100%" >
+	<tr>
+			
+<th align="center" ><td>整形168（医美汇）</td><td style="color:lightgreen">总计<?php echo $tmczx168 ?>单</td></th>
+<th align="center" ><td>美帮网</td><td style="color:lightgreen">总计<?php echo $tmcmbw ?>单</td></th>
+<th align="center" ><td>爱丽帮</td><td style="color:lightgreen">总计<?php echo $tmcalb ?>单</td></th>
+<th align="center" ><td>美丽无忧</td><td style="color:lightgreen">总计<?php echo $tmcmlwy ?>单</td></th>
+<th align="center" ><td>诺而美</td><td style="color:lightgreen">总计<?php echo $tmcnem ?>单</td></th>
+<th align="center" ><td>米多网</td><td style="color:lightgreen">总计<?php echo $tmcmdw ?>单</td></th>
+	
+  </tr>	 
+<tr >
+<th align="center" ><td>美丫网</td><td style="color:lightgreen">总计<?php echo $tmcmyw ?>单</td></th>
+<th align="center" ><td>韩式爱美</td><td style="color:lightgreen">总计<?php echo $tmchsam ?>单</td></th>
+<th align="center" ><td>U美-整形驿站</td><td style="color:lightgreen">总计<?php echo $tmcum ?>单</td></th>
+<th align="center" ><td>驻容网</td><td style="color:lightgreen">总计<?php echo $tmczrw ?>单</td></th>
+<th align="center" ><td>彼美网</td><td style="color:lightgreen">总计<?php echo $tmcbm ?>单</td></th>
+<th align="center" ><td>美尔呗</td><td style="color:lightgreen">总计<?php echo $tmcmeb ?>单</td></th>
+
+
+</tr>
+</table>	      
 	   
 	   
 	   
