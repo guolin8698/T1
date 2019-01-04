@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+	<script>
+function setFile(f1){ 
+	var str = f1;
+	var n = str.lastIndexOf("/")  //获取斜杠最后一次出现的位置
+document.frm.logoImg.value= str.substring(n+1);   
+     }
+</script>
+ 
+ 
+<form action="#" method="post"  name="frm"> 请选择上传的图片 
+      <input name="pic_name" id="logoImg"   type="text" size="30"/>
+<label style=" cursor:pointer" onClick="window.open('upload.htm','上传图片','height=200,width=400,top=200,left=200')">上传图片</label>
+</form>
+	
+	
+	</body>
+</html>
