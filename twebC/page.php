@@ -224,7 +224,7 @@ text-decoration:none;
                     </div>
                     <div class="modal-body">
                         <p>
-						<iframe id="editw" width="1050" scr='' frameborder="0" scrolling="no" ></iframe> </p>
+						<iframe id="editw" width="1450"  scr='' frameborder="0" scrolling="no" ></iframe> </p>
 
                     </div>
                     <div class="modal-footer">

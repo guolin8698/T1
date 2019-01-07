@@ -53,7 +53,15 @@ $eqdname=preg_replace('|[0-9a-zA-Z/<>=.:_"]+|','',$eqdname);
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrapde.css">
+	
+	
+	 <script type="text/javascript" src="./js/jquery-2.1.0.min.js"></script>
+	
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	
+	
+	
     <!-- <link rel="stylesheet" type="text/css" href="../public/css/base.css">  -->
     <!--link rel="stylesheet" type="text/css" href="css/b_login.css"-->
 	<link rel="stylesheet" type="text/css" href="css/styepage.css">
@@ -67,9 +75,73 @@ function setFile(f1){
 document.frm.logoImg.value= str.substring(n+1);   
      }
 </script>
-<body>
+
+	
+	
+	
+	
+	<body>
+	
+	
+	<div class="skin-default" id="wrapper">
+	
+	
+	<div class="modal fade bs-example-modal-lg in" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="color:deepskyblue">图片详情</h4>
+                    </div>
+                    <div class="modal-body">
+                         
+						   <img id="imgss" src="">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <!--button type="button" class="btn btn-primary">提交</button-->
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <div class="edit">
-  <table border="1" width="1050" >
+  <table border="1" width="1450" >
   <tr><td colspan="4" align="center" style="font-size: 16px">客户资料</td></tr>
 		<tr>
     <th align="center" >日期</th>
@@ -109,10 +181,12 @@ document.frm.logoImg.value= str.substring(n+1);
 <h4><p  style="color:brown">备注图片：</p></h4>
 		
 <?php 
-	echo"<lable style='color:brown'>点击图片放大查看</lable><br>";
+	//echo"<lable style='color:brown'>点击图片放大查看</lable><br>";
 	$imsql='select * from comment where imgpath !="" AND sid ='. $id;
     $imgres=mysqli_query($conn,$imsql);
 	//$deimg=mysqli_fetch_assoc($imgres);	
+		echo "<table>";
+			echo "<tr>";
 	while($sdeimg=mysqli_fetch_array($imgres)){
 			//$sdeimg=$deimg;
 	$imgpath=$sdeimg['imgpath'];
@@ -125,35 +199,75 @@ document.frm.logoImg.value= str.substring(n+1);
 		 // echo "图片上传者：",$sdeimg['user'],"&#10";
 		if($sdeimg['imgpath']){ 
 		     if($sdeimg['upimgdate']){$upimgdate=$sdeimg['upimgdate'];}
-			echo "<img   class='imgsize' style='width:15%;height:15%;' alt='点击放大' src=$imgpath><br>";
-			if($sdeimg['user']){echo "<p style='color:chocolate'>此图片由",$imgaddu,"于",$upimgdate,"上传<br> </p>";}
+			//echo "<p id='imgs' hidden='hidden' ><img src=$imgpath></p><br>";
+			
+			echo "<th align='center' height='100px' style='font-size: 12px' ><img   id='imgsize' style='width:55%;height:100%;' src=$imgpath><br>";
+			if($sdeimg['user']){echo "此图片由",$imgaddu,"于",$upimgdate,"上传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>";}
+			echo '<input src='.$imgpath.' type="button" value="点我看大图"  data-toggle="modal" data-target=".bs-example-modal-lg" onclick="imgplus(this.src)">';
+			echo "</th>";
 			
 			
 		}
 	  //}
 		} 
 		
-		
+		echo "</tr>";
+			echo "</table>";
 	?>	
 	
 	
-	<script>
-		var  imgsize = document.getElementsByClassName('imgsize');
-		      
-		       imgsize[0].onclick=function(){
-				   if (imgsize[0].style.height=="15%"&&imgsize[0].style.width=="15%"){
-				   imgsize[0].style.height="70%";
-				   imgsize[0].style.width="70%";}
-				   else{
+	
+	
+	
+	<!--script>
+	$('.imgsize').on('click',function){
+		var imgs =  document.getElementById('imgs').innerHTML;
+		            imgWindow=window.open('','','width=1480,height=500') ;
+					 imgWindow.document.write(imgs);
 					   
-					    imgsize[0].style.height="15%";
-				   imgsize[0].style.width="15%";
-				   }
+                           imgWindow.focus(); 
+	}
+		
+		
+		
+	</script-->
+	<script>
+		var  imgsize = document.getElementById('imgsize');
+		         function imgplus(src){
+					      var imgss =document.getElementById('imgss');
+                          //var imgs =  document.getElementById('imgs').innerHTML;
+					     imgss.src=src;
+				 }
+		
+		
+	</script>
+	
+	
+	
+<!--script>
+		
+		var  imgsize = document.getElementById('imgsize');
+		         function imgplus(id){
+					      var imgss =document.getElementById('imgss');
+                          var imgs =  document.getElementById('imgs').innerHTML;
+					     imgss.src=id;
+				  // if (imgsize[0].style.height=="15%"&&imgsize[0].style.width=="15%"){
+					  //imgWindow=window.open("","_blank","channelmode=1,fullscreen=yes,toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=500, height=450");
+					   //imgWindow.document.write(imgs);
+					   
+                         //  imgWindow.focus();
+				     //imgsize[0].style.height="70%";
+				   //imgsize[0].style.width="70%";}
+				  // else{
+					//   					    imgsize[0].style.height="15%";
+				   //imgsize[0].style.width="15%";
+				  // }
 			   }
 		 imgsize[1].onclick=function(){
 				   if (imgsize[1].style.height=="15%"&&imgsize[1].style.width=="15%"){
-				   imgsize[1].style.height="70%";
-				   imgsize[1].style.width="70%";}
+				   imgsize[1].style.height="";
+					   
+				   imgsize[1].style.width="";}
 				   else{
 					   
 					    imgsize[1].style.height="15%";
@@ -163,8 +277,8 @@ document.frm.logoImg.value= str.substring(n+1);
 		
 		imgsize[2].onclick=function(){
 				   if (imgsize[2].style.height=="15%"&&imgsize[2].style.width=="15%"){
-				   imgsize[2].style.height="70%";
-				   imgsize[2].style.width="70%";}
+				   imgsize[2].style.height="";
+				   imgsize[2].style.width="";}
 				   else{
 					   
 					    imgsize[2].style.height="15%";
@@ -173,8 +287,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		imgsize[3].onclick=function(){
 				   if (imgsize[3].style.height=="15%"&&imgsize[3].style.width=="15%"){
-				   imgsize[3].style.height="70%";
-				   imgsize[3].style.width="70%";}
+				   imgsize[3].style.height="";
+				   imgsize[3].style.width="";}
 				   else{
 					   
 					    imgsize[3].style.height="15%";
@@ -183,8 +297,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		imgsize[4].onclick=function(){
 				   if (imgsize[4].style.height=="15%"&&imgsize[4].style.width=="15%"){
-				   imgsize[4].style.height="70%";
-				   imgsize[4].style.width="70%";}
+				   imgsize[4].style.height="";
+				   imgsize[4].style.width="";}
 				   else{
 					   
 					    imgsize[4].style.height="15%";
@@ -193,8 +307,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		imgsize[5].onclick=function(){
 				   if (imgsize[5].style.height=="15%"&&imgsize[5].style.width=="15%"){
-				   imgsize[5].style.height="70%";
-				   imgsize[5].style.width="70%";}
+				   imgsize[5].style.height="";
+				   imgsize[5].style.width="";}
 				   else{
 					   
 					    imgsize[5].style.height="15%";
@@ -203,8 +317,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		imgsize[6].onclick=function(){
 				   if (imgsize[6].style.height=="15%"&&imgsize[6].style.width=="15%"){
-				   imgsize[6].style.height="70%";
-				   imgsize[6].style.width="70%";}
+				   imgsize[6].style.height="";
+				   imgsize[6].style.width="";}
 				   else{
 					   
 					    imgsize[6].style.height="15%";
@@ -213,8 +327,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		imgsize[7].onclick=function(){
 				   if (imgsize[7].style.height=="15%"&&imgsize[7].style.width=="15%"){
-				   imgsize[7].style.height="70%";
-				   imgsize[7].style.width="70%";}
+				   imgsize[7].style.height="";
+				   imgsize[7].style.width="";}
 				   else{
 					   
 					    imgsize[7].style.height="15%";
@@ -223,8 +337,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		imgsize[8].onclick=function(){
 				   if (imgsize[8].style.height=="15%"&&imgsize[8].style.width=="15%"){
-				   imgsize[8].style.height="70%";
-				   imgsize[8].style.width="70%";}
+				   imgsize[8].style.height="";
+				   imgsize[8].style.width="";}
 				   else{
 					   
 					    imgsize[8].style.height="15%";
@@ -233,8 +347,8 @@ document.frm.logoImg.value= str.substring(n+1);
 			   }
 		
 		
-		</script>
-	
+		</script-->
+		
 	
 	
 	
