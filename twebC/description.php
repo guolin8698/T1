@@ -54,7 +54,7 @@ $eqdname=preg_replace('|[0-9a-zA-Z/<>=.:_"]+|','',$eqdname);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./bootstrap/css/bootstrapde.css">
-	
+	<link rel="stylesheet" href="./css/de.css">
 	
 	 <script type="text/javascript" src="./js/jquery-2.1.0.min.js"></script>
 	
@@ -64,7 +64,7 @@ $eqdname=preg_replace('|[0-9a-zA-Z/<>=.:_"]+|','',$eqdname);
 	
     <!-- <link rel="stylesheet" type="text/css" href="../public/css/base.css">  -->
     <!--link rel="stylesheet" type="text/css" href="css/b_login.css"-->
-	<link rel="stylesheet" type="text/css" href="css/styepage.css">
+	<!--link rel="stylesheet" type="text/css" href="css/styepage.css"-->
 	<!--script language="javascript" type="text/javascript" src="./My97DatePicker/WdatePicker.js"></script-->
 	
 	</head>
@@ -80,7 +80,7 @@ document.frm.logoImg.value= str.substring(n+1);
 	
 	
 	
-	<body>
+<body>
 	
 	
 	<div class="skin-default" id="wrapper">
@@ -106,7 +106,7 @@ document.frm.logoImg.value= str.substring(n+1);
             </div>
         </div>
 	
-		</div>
+</div>
 	
 	
 	
@@ -201,8 +201,8 @@ document.frm.logoImg.value= str.substring(n+1);
 		     if($sdeimg['upimgdate']){$upimgdate=$sdeimg['upimgdate'];}
 			//echo "<p id='imgs' hidden='hidden' ><img src=$imgpath></p><br>";
 			
-			echo "<th align='center' height='100px' style='font-size: 12px' ><img   id='imgsize' style='width:55%;height:100%;' src=$imgpath><br>";
-			if($sdeimg['user']){echo "此图片由",$imgaddu,"于",$upimgdate,"上传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>";}
+			echo "<th align='center' height='80px' style='font-size: 12px' ><img   id='imgsize' style='width:75%;height:100%;' src=$imgpath><br>";
+			if($sdeimg['user']){echo "<h7><p style='color:chocolate'>此图片由",$imgaddu,"于",$upimgdate,"上传</h7>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>";}
 			echo '<input src='.$imgpath.' type="button" value="点我看大图"  data-toggle="modal" data-target=".bs-example-modal-lg" onclick="imgplus(this.src)">';
 			echo "</th>";
 			
@@ -231,7 +231,7 @@ document.frm.logoImg.value= str.substring(n+1);
 		
 		
 	</script-->
-	<script>
+  <script>
 		var  imgsize = document.getElementById('imgsize');
 		         function imgplus(src){
 					      var imgss =document.getElementById('imgss');
@@ -376,9 +376,10 @@ document.frm.logoImg.value= str.substring(n+1);
 	
 	
 	
-	<h4><p style="color:brown">备注信息：</p></h4>
+  <h4><p style="color:brown">备注信息：</p></h4>
+	<div  id="deshow" class="chatwindow"> 
 <!--textarea   style= "background:transparent; border-style:none;"  cols="180" rows="10"  readonly -->
-	<textarea id="deshow"  style= "background:#ffcccc; border-style:none;"  cols="180" rows="7"  readonly ><?php  
+	<!--textarea id="deshow"  style= "background:#F5F5F5; border-style:none;"  cols="100" rows="7"  readonly --><?php  
 
 $sql='select * from comment where comment !="" AND sid ='. $id;
 $res=mysqli_query($conn,$sql);
@@ -386,20 +387,28 @@ $array=array();
 while($row=mysqli_fetch_array($res)){ ?>
    <?php
 	$sdedate = date('Y年m月d日h点m分s秒', $row['cdate']);
-     echo  "用户：",$row['user'],"&#10"; //&#10;
-	 echo  "备注：",$row['comment'],"&#10" ;  //&#10;
-	 echo  "备注添加时间：",$sdedate,"&#10"; //&#10;
-	echo "---------------------------------------------&#10";
+     echo  "<p class='dhk'>用户：",$row['user'],"&#10<br>"; //&#10;
+	 echo  "备注：",$row['comment'],"&#10<br>" ;  //&#10;
+	 echo  "备注添加时间：",$sdedate,"&#10</p><br>"; //&#10;
+	
 	?>
 <?php
 }
-?> </textarea> 
-	<h6><span style="vertical-align:top">添加备注：</span>
-		<textarea id="description" name="description" cols="80" rows="2"> 
+?> <!--/textarea--> 
+		
+		</div>
+		
+		
+		<br>
+		
+		
+		
+	<h6><p style="vertical-align:top;color:brown">添加备注：</p></h6>
+	    <p class="deadd"> 
+		<textarea id="description" name="description"  class="deadd" style="background:#9EEA6A" cols="80" rows="2"> 
          
-      </textarea></h6>
-  
-	
+      </textarea>
+  	</p>
   <h2><p id="eresult" style="color:chartreuse"></p></h2><h2><p id="erresult" style="color:red"></p></h2>
   
 <input id="id" type="hidden" value="<?php echo $data['id'];?>" name="id" />
@@ -472,6 +481,77 @@ while($row=mysqli_fetch_array($res)){ ?>
 	
 </div>
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 </body>
 	

@@ -1,0 +1,58 @@
+.box {
+        width: 500px;
+        height: 300px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        line-height: 30px;
+        text-align: center;
+    }
+    .box::-webkit-scrollbar {
+        display: black;  
+}
+
+.chatwindow {
+	margin:auto auto auto auto;
+	padding:15px;
+	width:75%;
+	height:270px;
+	background:#f5f5f5;
+	overflow-x: hidden;
+        overflow-y: scroll;
+        line-height: 18px;
+	border:#9eea6a solid thin;
+	
+	
+		}
+.chatwindow::-webkit-scrollbar {
+        display: black;  
+}
+.deadd{ 
+	
+    margin:auto auto auto auto;
+    
+    
+	
+	width:75%;
+	padding:1px;
+	
+	
+	
+	
+	
+	
+}
+
+
+
+.dhk{
+  		
+	font-size:11px;
+	margin:1 ;
+	width:30%;
+	
+	padding:7px;
+	background:#9eea6a;
+	 -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius:10px;
+}

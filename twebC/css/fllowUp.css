@@ -1,0 +1,636 @@
+@import url(../../css/follow-up.css);
+
+.state {
+    height: 40px !important;
+    line-height: 40px;
+    padding-left: 15px;
+}
+
+    .state label {
+        float: left;
+    }
+
+    .state .stater {
+        display: inline-block;
+        width: 80%;
+    }
+
+        .state .stater .radio-box {
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+
+            .state .stater .radio-box .iradio-green {
+                margin-top: 7px;
+            }
+
+.liaot {
+    width: 100%;
+}
+
+    .liaot .inf-rig1 {
+        float: left;
+        min-width: 500px;
+        padding: 0px;
+        height: auto;
+        background-color: #fafafa;
+    }
+
+        .liaot .inf-rig1 .zx-cont {
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+            .liaot .inf-rig1 .zx-cont .row {
+                width: 100%;
+                height: auto;
+            }
+
+                .liaot .inf-rig1 .zx-cont .row .lab {
+                    float: left;
+                    width: 10%;
+                }
+
+            .liaot .inf-rig1 .zx-cont .conten {
+                padding-left: 20px;
+                line-height: 40px;
+            }
+
+                .liaot .inf-rig1 .zx-cont .conten .xm {
+                    width: 85%;
+                    min-height: 30px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    float: left;
+                    padding: 5px;
+                    line-height: 25px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    background-color: #fff;
+                }
+
+            .liaot .inf-rig1 .zx-cont .zhus {
+                line-height: 60px;
+                padding-left: 15px;
+                background-color: #fafafa;
+            }
+
+                .liaot .inf-rig1 .zx-cont .zhus .zhus-cont {
+                    float: left;
+                    border: 1px solid #f3f5f7;
+                    padding: 5px;
+                    width: 85%;
+                    display: inline-block;
+                    line-height: 25px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    min-height: 60px;
+                    margin: 5px 0px;
+                    background-color: #fff;
+                }
+
+            .liaot .inf-rig1 .zx-cont .hospital-list {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: flex;
+                height: 40px;
+                background-color: #75545e;
+                padding-left: 20px;
+                line-height: 40px;
+                color: #fff;
+            }
+
+                .liaot .inf-rig1 .zx-cont .hospital-list:hover {
+                    background-color: #75545e !important;
+                }
+
+                .liaot .inf-rig1 .zx-cont .hospital-list .hospital {
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                    -webkit-flex: 1;
+                    -moz-box-flex: 1;
+                    flex: 1;
+                    padding-right: 30px;
+                    max-width: 200px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    position: relative;
+                    border-right: 1px solid #fff;
+                    cursor: pointer;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                    .liaot .inf-rig1 .zx-cont .hospital-list .hospital .newsig {
+                        position: absolute;
+                        width: 30px;
+                        height: 40px;
+                        font-size: 10px;
+                        right: 0px;
+                        top: 0px;
+                    }
+
+                        .liaot .inf-rig1 .zx-cont .hospital-list .hospital .newsig .time {
+                            display: block;
+                            height: 20px;
+                            line-height: 20px;
+                            color: rgba(255, 255, 255, 0.8);
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                        }
+
+                        .liaot .inf-rig1 .zx-cont .hospital-list .hospital .newsig .number {
+                            display: block;
+                            font-size: 10px;
+                            height: 17px;
+                            min-width: 17px;
+                            max-width: 27px;
+                            text-align: center;
+                            -moz-border-radius: 50%;
+                            border-radius: 50%;
+                            background-color: #2cabe3;
+                            line-height: 17px;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                        }
+
+            .liaot .inf-rig1 .zx-cont .coze-inf {
+                width: 100%;
+            }
+
+                .liaot .inf-rig1 .zx-cont .coze-inf .m-tit {
+                    height: 30px;
+                    line-height: 30px;
+                    border-bottom: 1px solid #f3f5f7;
+                    background-color: #fafafa;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .name {
+                        width: auto;
+                        float: left;
+                        font-size: 16px;
+                        padding-left: 20px;
+                        position: relative;
+                        overflow: visible;
+                    }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .name .newsinger {
+                            position: absolute;
+                            top: 3px;
+                            right: -15px;
+                            height: 13px;
+                            min-width: 13px;
+                            -moz-border-radius: 50%;
+                            border-radius: 50%;
+                            background-color: #c66161;
+                            color: #fff;
+                            line-height: 13px;
+                            font-size: 12px;
+                            text-align: center;
+                        }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .duplicateBill {
+                        width: auto;
+                        height: 20px;
+                        line-height: 20px;
+                        border: 1px solid #89e0f1;
+                        margin-top: 4px;
+                        margin-left: 10px;
+                        float: left;
+                        cursor: pointer;
+                        color: #7e8795;
+                        font-size: 12px;
+                        padding: 0px 10px;
+                        background-color: #fff;
+                    }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .duplicateBill:hover {
+                            color: #89e0f1;
+                        }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .state {
+                        float: left;
+                        font-size: 14px;
+                        padding-left: 35px;
+                        color: #ff6666;
+                    }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .data-time {
+                        float: left;
+                        font-size: 14px;
+                        padding-left: 35px;
+                    }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .data-time .data {
+                            display: inline-block;
+                            margin-left: 15px;
+                        }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .m-tit .data-time .timer {
+                            display: inline-block;
+                            margin-left: 12px;
+                        }
+
+                .liaot .inf-rig1 .zx-cont .coze-inf .chitchat {
+                    width: 100%;
+                    height: 450px;
+                    background-color: #fff;
+                }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian {
+                        width: 100%;
+                        height: 300px;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        border: 1px solid #ccc;
+                        box-sizing: border-box;
+                    }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .mains {
+                            margin-top: 15px;
+                            padding: 0 10px;
+                            text-align: left;
+                        }
+
+                            .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .mains .infor {
+                                height: 25px;
+                                font-size: 12px;
+                                color: #888;
+                            }
+
+                                .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .mains .infor .awater {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+
+                                .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .mains .infor span {
+                                    line-height: 25px;
+                                }
+
+                            .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .mains .text {
+                                margin-left: 25px;
+                                border-radius: 4px;
+                                padding: 5px;
+                                box-sizing: border-box;
+                                display: inline-block;
+                                position: relative;
+                                max-width: calc(100% - 25px);
+                                min-height: 30px;
+                                line-height: 20px;
+                                font-size: 14px;
+                                text-align: left;
+                                word-break: break-all;
+                                background-color: #f3f5f7;
+                            }
+
+                                .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .mains .text:before {
+                                    content: " ";
+                                    position: absolute;
+                                    top: 9px;
+                                    right: 100%;
+                                    border: 6px solid transparent;
+                                    border-right-color: #f3f5f7;
+                                    box-sizing: border-box;
+                                }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .self {
+                            text-align: right;
+                        }
+
+                            .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .self .infor .awater {
+                                float: right;
+                            }
+
+                                .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .self .infor .awater .name {
+                                    float: right;
+                                }
+
+                            .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .self .text {
+                                margin-right: 25px;
+                                background-color: #b2e281;
+                            }
+
+                                .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .jiemian .self .text:before {
+                                    content: " ";
+                                    position: absolute;
+                                    top: 9px;
+                                    left: 100%;
+                                    border: 6px solid transparent;
+                                    border-left-color: #62c462;
+                                    box-sizing: border-box;
+                                }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .gj {
+                        height: 30px;
+                        line-height: 30px;
+                        border-bottom: 1px solid #ccc;
+                        border-right: 1px solid #ccc;
+                    }
+
+                    .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .fasong {
+                        height: 120px;
+                        border-right: 1px solid #ccc;
+                    }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .fasong .cc {
+                            height: 90px;
+                        }
+
+                            .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .fasong .cc textarea {
+                                height: 90px;
+                                border: none;
+                            }
+
+                        .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .fasong .bttn .btnfas {
+                            width: 80px;
+                            text-align: center;
+                            background-color: #0099CC;
+                            color: #fff;
+                            height: 25px;
+                            border-radius: 5px;
+                            float: right;
+                            margin-right: 20px;
+                            margin-top: 2px;
+                        }
+
+                            .liaot .inf-rig1 .zx-cont .coze-inf .chitchat .fasong .bttn .btnfas i {
+                                margin-left: 4px;
+                            }
+
+    .liaot .inf-leftt {
+        padding: 10px;
+        float: left;
+        padding-top: 5px;
+        height: 483px;
+        color: #fff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .liaot .inf-leftt .list {
+            height: 40px;
+            font-size: 14px;
+            clear: both;
+            line-height: 40px;
+            color: #000;
+            margin-top: -4px;
+            border-bottom: 1px solid #fff;
+        }
+
+            .liaot .inf-leftt .list dt {
+                float: left;
+            }
+
+            .liaot .inf-leftt .list dd {
+                float: left;
+            }
+
+            .liaot .inf-leftt .list .ztzh {
+                margin-left: 12%;
+            }
+
+                .liaot .inf-leftt .list .ztzh.zhuan1 {
+                    color: #00b7ee;
+                }
+
+                .liaot .inf-leftt .list .ztzh.zhuan2 {
+                    color: #ff9966;
+                }
+
+                .liaot .inf-leftt .list .ztzh.zhuan3 {
+                    color: #c66161;
+                }
+
+                .liaot .inf-leftt .list .ztzh.zhuan4 {
+                    color: #00B83F;
+                }
+
+                .liaot .inf-leftt .list .ztzh.zhuan5 {
+                    color: #0a6999;
+                }
+
+                .liaot .inf-leftt .list .ztzh.zhuan6 {
+                    color: #0000FF;
+                }
+
+            .liaot .inf-leftt .list .biaoji {
+                margin-left: 10%;
+                background-color: #7e8795;
+                height: 20px;
+                margin-top: 10px;
+                line-height: 20px;
+                padding: 0px 3px;
+                font-size: 12px;
+                border: 1px solid #89e0f1;
+                cursor: pointer;
+                color: #fff;
+            }
+
+                .liaot .inf-leftt .list .biaoji:hover {
+                    text-decoration: underline;
+                }
+
+.xztp {
+    margin: 20px 100px;
+}
+
+.state .stater .radio-box .staterss {
+    display: block;
+    padding-right: 30px;
+    background: url('../images/next.svg') no-repeat 50px;
+    background-size: 20px;
+}
+
+    .state .stater .radio-box .staterss.notbg {
+        background: none !important;
+    }
+
+    .state .stater .radio-box .staterss.dstaterss {
+        display: block;
+        padding-right: 30px;
+        background: url('../images/next.svg') no-repeat 50px;
+        background-size: 20px;
+        color: #FF2F2F;
+        font-weight: 700;
+    }
+
+.state .stater .radio-box.continute {
+    margin-left: 15px;
+    background-color: #38b1b9;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    height: 38px;
+    padding: 0 15px;
+}
+
+    .state .stater .radio-box.continute:active {
+        background-color: #333;
+        color: #fff;
+    }
+             .follow .loadplan {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    z-index: 999;
+    top: 0;
+    left: 0; }
+    .follow .loadplan .bgImg {
+      width: 377px;
+      height: 126px;
+      background: url('../lib/layer/2.4/skin/default/loading-0.gif') no-repeat center;
+      color: #333;
+      text-align: center;
+      line-height: 40px;
+      font-size: 24px; }
+    .follow .loadplan .refrsh {
+      width: 377px;
+      height: 126px;
+      color: #333;
+      text-align: center;
+      line-height: 40px;
+      font-size: 24px; }
+      .follow .loadplan .refrsh.fade-enter-active, .follow .loadplan .refrsh.fade-leave-active {
+        -webkit-transition: all .5s linear;
+        -moz-transition: all .5s linear;
+        transition: all .5s linear;
+        opacity: 1; }
+      .follow .loadplan .refrsh.fade-enter, .follow .loadplan .refrsh.fade-leave-active {
+        opacity: 0; }
+      .jiesuan {
+          margin-left:20px;
+  width: 250px;
+  height: auto;
+}
+  .jiesuan .jieUl li {
+    display: flex;
+    height: 25px;
+    border-bottom: 1px solid #ddd;
+    line-height: 25px;
+    padding: 5px 10px; }
+    .jiesuan .jieUl li span {
+      flex: 1;
+      overflow:hidden;
+    }
+    .jiesuan .jieUl li .money-text {
+      flex: 1; }
+      .jiesuan .jieUl li .money-text .input-text {
+        height: 25px;
+        line-height: 25px; }
+            .jiesuan .nr-row {
+          /*          overflow: hidden;*/
+          flex:1;
+ 
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+         .jiesuan .nr-row .u-project {
+            display: inline-block;
+            float: left;
+            width: 100%;
+   
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box; }
+           .jiesuan .nr-row .u-project .diqu {
+              float: left;
+              width:100%;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box; }
+             .jiesuan .nr-row .u-project .diqu .province {
+                width: 100%;
+                position: relative; }
+               .jiesuan .nr-row .u-project .diqu .province .mor {
+                  display: inline-block;
+                  width: 100%;
+                  height: 25px;
+                  background-color: #fff;
+                  padding-left: 5px;
+                  -webkit-box-sizing: border-box;
+                  -moz-box-sizing: border-box;
+                  box-sizing: border-box;
+                  line-height: 25px;
+                  font-size: 12px;
+                  border: 1px solid #ccc;
+                  cursor: pointer;
+                  position: relative;
+                  padding-right: 20px;
+                  box-sizing: border-box; }
+                 .jiesuan .nr-row .u-project .diqu .province .mor .ele-top {
+                    position: absolute;
+                    right: 7px;
+                    top: 0px; }
+                 .jiesuan .nr-row .u-project .diqu .province .mor:hover {
+                    border: 1px solid #0e90d2; }
+               .jiesuan .nr-row .u-project .diqu .province .list {
+                  z-index: 200;
+                  position: absolute;
+                  top: 24px;
+                  background-color: #fff;
+                  -webkit-box-sizing: border-box;
+                  -moz-box-sizing: border-box;
+                  box-sizing: border-box;
+                  width: 100%;
+                  border: 1px solid #ccc;
+                  border-top: none; }
+                 .jiesuan .nr-row .u-project .diqu .province .list .seach-list {
+                    position: relative;
+                    width: 98%;
+                    padding-left: 1%; }
+                   .jiesuan .nr-row .u-project .diqu .province .list .seach-list .seach {
+                      padding-left: 25px;
+                      -webkit-box-sizing: border-box;
+                      -moz-box-sizing: border-box;
+                      box-sizing: border-box; }
+                   .jiesuan .nr-row .u-project .diqu .province .list .seach-list .sea {
+                      position: absolute;
+                      left: 5px;
+                      top: 0px;
+                      font-size: 16px;
+                      line-height: 35px; }
+                 .jiesuan .nr-row .u-project .diqu .province .list .selected-list {
+                    width: 100%;
+                    max-height: 200px;
+                    overflow-y: scroll;
+                    margin-top: 5px;
+                    height: auto;
+                    background-color: #fff; }
+                   .jiesuan .nr-row .u-project .diqu .province .list .selected-list li {
+                      height: 30px;
+                      line-height: 20px;
+                      padding-left: 10px;
+                      -webkit-box-sizing: border-box;
+                      -moz-box-sizing: border-box;
+                      box-sizing: border-box; }
+                     .jiesuan .nr-row .u-project .diqu .province .list .selected-list li:hover {
+                        background-color: #7e8795; }
+                       .jiesuan .nr-row .u-project .diqu .province .list .selected-list li:hover a {
+                          color: #fff; }
+                     .jiesuan .nr-row .u-project .diqu .province .list .selected-list li a {
+                        font-size: 16px; }
+                   .jiesuan .nr-row .u-project .diqu .province .list .selected-list .xzList {
+                      background-color: #00a2d4 !important;
+                      border-bottom: 1px solid #fff; }
+                     .jiesuan .nr-row .u-project .diqu .province .list .selected-list .xzList:hover {
+                        background-color: #00a2d4; }
+                     .jiesuan .nr-row .u-project .diqu .province .list .selected-list .xzList a {
+                        color: #fff; }

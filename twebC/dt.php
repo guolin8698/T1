@@ -29,10 +29,10 @@ $res= mysqli_query($conn,$sql);
 	
 while($row=mysqli_fetch_array($res)){ 
 	 $sdedate = date('Y年m月d日H点m分s秒', $row['cdate']);
-     echo  "用户：",$row['user'],"&#10"; //&#10;
-	 echo  "备注：",$row['comment'],"&#10" ;  //&#10;
-	 echo  "备注添加时间：",$sdedate,"&#10"; //&#10;
-	echo "---------------------------------------------&#10"	;  
+     echo  "<p class='dhk'>用户：",$row['user'],"&#10<br>"; //&#10;
+	 echo  "备注：",$row['comment'],"&#10<br>" ;  //&#10;
+	 echo  "备注添加时间：",$sdedate,"&#10</p><br>"; //&#10;
+	  
 
 }
       
