@@ -155,7 +155,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 <table border="1" width="100%" >
 	<tr><td colspan="12" align="center" style="font-size: 16px">搜索结果统计信息</td></tr> </table>
 <table border="0" width="100%" >
-	<tr>
+	<tr onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''">
 	<th align="center" >搜索结果总记录数<td  align="left" style="color:darkorange">总计<?php echo $tmcount ?>条</td></th>
       <th align="center" >搜索结果上门量<td align="left" style="color:darkorange"><?php echo $tmsmcount ?> &nbsp;&nbsp;&nbsp;&nbsp;     </td></th>
 	  <th align="center" >搜索结果上门率<td align="left" style="color:darkorange"><?php echo round($tmsmlcount,2) ?>%</td></th>
@@ -171,7 +171,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 	<tr><td colspan="12" align="center" style="font-size: 16px;color:lightblue" >搜索结果三方派单量明细</td></tr> </table>	
 	   
 	<table border="0" width="100%" >
-	<tr>
+	<tr onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''">
 			
 <th align="center" ><td>整形168（医美汇）</td><td style="color:lightgreen">总计<?php echo $tmczx168 ?>单</td></th>
 <th align="center" ><td>美帮网</td><td style="color:lightgreen">总计<?php echo $tmcmbw ?>单</td></th>
@@ -181,7 +181,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 <th align="center" ><td>米多网</td><td style="color:lightgreen">总计<?php echo $tmcmdw ?>单</td></th>
 	
   </tr>	 
-<tr >
+<tr  onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''">
 <th align="center" ><td>美丫网</td><td style="color:lightgreen">总计<?php echo $tmcmyw ?>单</td></th>
 <th align="center" ><td>韩式爱美</td><td style="color:lightgreen">总计<?php echo $tmchsam ?>单</td></th>
 <th align="center" ><td>U美-整形驿站</td><td style="color:lightgreen">总计<?php echo $tmcum ?>单</td></th>
@@ -309,7 +309,7 @@ if ($result && mysqli_num_rows($result)) {
  
 //}
   while ($row = mysqli_fetch_assoc($result)) {
-      echo '<tr>';
+       echo '<tr  onmouseover="this.style.backgroundColor=\'rgba(45,183,222,0.6)\'" onmouseout="this.style.backgroundColor=\'\'">';
 //if ($_SESSION['limits']==1)	{  echo '<td><input type="checkbox" name="id[]" value="' . $row['id'] . '" /></td>';}
  //echo '<td><input type="checkbox" name="id[]" value="' . $row['id'] . '" /></td>';
       echo '<td>' . $row['id'] . '</td>';	 

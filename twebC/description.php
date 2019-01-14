@@ -80,7 +80,7 @@ document.frm.logoImg.value= str.substring(n+1);
 	
 	
 	
-<body>
+<body style="background:rgba(0,0,0,0.25);" >
 	
 	
 	<div class="skin-default" id="wrapper">
@@ -141,25 +141,25 @@ document.frm.logoImg.value= str.substring(n+1);
 	
 	
 <div class="edit">
-  <table border="1" width="1450" >
+  <table border="1" width="1450"  style="background:rgba(255,255,255,0.9);">
   <tr><td colspan="4" align="center" style="font-size: 16px">客户资料</td></tr>
-		<tr>
-    <th align="center" >日期</th>
+		<tr >
+    <th  align="center" >日期</th>
     <th align="center" >顾客姓名</th>
 	  <th align="center" >手机号</th>
 	  <th align="center" >微信号</th>
   </tr>
   <tr>
-    <td  align="center" height="40px" style="color:green"><?php echo $sdate?></td>
-    <td  align="center" height="40px" style="color:green"><?php echo $data['username']?></td>
-	   <td align="center"  height="40px" style="color:green"><?php echo $data['pnumber']?></td>
-	   <td align="center"  height="40px" style="color:green"><?php echo $data['wechat']?></td>
+    <td   onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" align="center" height="40px" style="color:green"><?php echo $sdate?></td>
+    <td   onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" align="center" height="40px" style="color:green"><?php echo $data['username']?></td>
+	   <td  onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" align="center"  height="40px" style="color:green"><?php echo $data['pnumber']?></td>
+	   <td  onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" align="center"  height="40px" style="color:green"><?php echo $data['wechat']?></td>
   </tr>
 	
-	<th height="30px">渠道名称</th> <td   height="30px" style="color:green" colspan="3"><?php echo $eqdname?></td>	
-	<tr><th height="30px">咨询项目</th><td  height="30px" style="color:green" colspan="3"><?php echo $data['project']?></td></tr> 
-		<tr><th height="30px">接单员</th><td  height="30px" style="color:green" colspan="3"><?php echo $data['jdy']?></td></tr> 
-		<tr><th height="30px">上门情况</th> <td height="30px"  style="color:green" colspan="3"><?php echo $data['login']?></td></tr>
+	<th height="30px">渠道名称</th> <td   onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" height="30px" style="color:green" colspan="3"><?php echo $eqdname?></td>	
+	<tr><th height="30px">咨询项目</th><td  onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" height="30px" style="color:green" colspan="3"><?php echo $data['project']?></td></tr> 
+		<tr><th height="30px">接单员</th><td  onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" height="30px" style="color:green" colspan="3"><?php echo $data['jdy']?></td></tr> 
+		<tr><th height="30px">上门情况</th> <td  onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''" height="30px"  style="color:green" colspan="3"><?php echo $data['login']?></td></tr>
 </table>
    	<!--div class="sdesc">
 	<table id="sdescription" border="1" width="1050" >

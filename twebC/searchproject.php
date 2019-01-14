@@ -97,7 +97,7 @@ if ($result && mysqli_num_rows($result)) {
  
 //}
   while ($row = mysqli_fetch_assoc($result)) {
-      echo '<tr>';
+       echo '<tr  onmouseover="this.style.backgroundColor=\'rgba(45,183,222,0.6)\'" onmouseout="this.style.backgroundColor=\'\'">';
 //if ($_SESSION['limits']==1)	{  echo '<td><input type="checkbox" name="id[]" value="' . $row['id'] . '" /></td>';}
  //echo '<td><input type="checkbox" name="id[]" value="' . $row['id'] . '" /></td>';
       echo '<td>' . $row['id'] . '</td>';	 

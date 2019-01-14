@@ -170,7 +170,7 @@ color:#FF0000;
 text-decoration:underline; 
 } 
 a:visited { 
-color:#00FF00; 
+color:#9eea6a; 
 text-decoration:none; 
 } 
 a:hover { 
@@ -219,8 +219,8 @@ text-decoration:none;
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        <h4 class="modal-title" id="myModalLabel">顾客详情</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><b><span aria-hidden="true" style="color:red;">&nbsp;X&nbsp; </span></b></button>
+                        <h4 class="modal-title" id="myModalLabel" style="color:darkorange" align="center">顾客详情</h4>
                     </div>
                     <div class="modal-body">
                         <p>
@@ -562,16 +562,16 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 <table border="1" width="100%" >
 	<tr><td colspan="12" align="center" style="font-size: 16px">统计信息</td></tr> </table>
 <table border="0" width="100%" >
-	<tr>
+	<tr onmouseover="this.style.backgroundColor='rgba(218,134,26,0.5)'" onmouseout="this.style.backgroundColor=''">
 			
-    <th align="center" >总记录数<td style="color:aqua">总计<?php echo $count ?>条</td></th>
+    <th  align="center" >总记录数<td   style="color:aqua">总计<?php echo $count ?>条</td></th>
     <th align="center" >总上门量<td style="color:aqua"><?php echo $smcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >总上门率<td style="color:aqua"><?php echo round($smlcount,2) ?>%</td></th>
 	  <th align="center" >总成交<td style="color:aqua"><?php echo $cjcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >总成交率<td style="color:aqua"><?php echo round($cjlcount,2) ?>%</td></th>
 	  <th align="left" >宏脉登记<td style="color:aqua">总计<?php echo $lcount ?>条</td></th>		
   </tr>	
-<tr>
+<tr onmouseover="this.style.backgroundColor='rgba(45,183,222,0.6)'" onmouseout="this.style.backgroundColor=''">
 	<th align="center" >本月总记录数<td style="color:darkorange">总计<?php echo $tmcount ?>条</td></th>
       <th align="center" >本月上门量<td style="color:darkorange"><?php echo $tmsmcount ?>&nbsp;&nbsp;&nbsp;&nbsp; </td></th>
 	  <th align="center" >本月上门率<td style="color:darkorange"><?php echo round($tmsmlcount,2) ?>%</td></th>
@@ -584,7 +584,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 <table border="1" width="100%" >
 	<tr><td colspan="12" align="center" style="font-size: 16px">三方派单总量明细</td></tr> </table>	   
 	<table border="0" width="100%" >
-	<tr>
+	<tr onmouseover="this.style.backgroundColor='rgba(126,42,198,0.6)'" onmouseout="this.style.backgroundColor=''" >
 			
 <th align="center" ><td>整形168（医美汇）</td><td style="color:gold">总计<?php echo $czx168 ?>单</td></th>
 <th align="center" ><td>美帮网</td><td style="color:gold">总计<?php echo $cmbw ?>单</td></th>
@@ -594,7 +594,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 <th align="center" ><td>米多网</td><td style="color:gold">总计<?php echo $cmdw ?>单</td></th>
 	
   </tr>	 
-<tr >
+<tr onmouseover="this.style.backgroundColor='rgba(232,17,88,0.6)'" onmouseout="this.style.backgroundColor=''" >
 <th align="center" ><td>美丫网</td><td style="color:gold">总计<?php echo $cmyw ?>单</td></th>
 <th align="center" ><td>韩式爱美</td><td style="color:gold">总计<?php echo $chsam ?>单</td></th>
 <th align="center" ><td>U美-整形驿站</td><td style="color:gold">总计<?php echo $cum ?>单</td></th>
@@ -610,7 +610,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 	<tr><td colspan="12" align="center" style="font-size: 16px;color:lightblue" >本月三方派单量明细</td></tr> </table>	
 	   
 	<table border="0" width="100%" >
-	<tr>
+	<tr onmouseover="this.style.backgroundColor='rgba(207,107,19,0.6)'" onmouseout="this.style.backgroundColor=''" >
 			
 <th align="center" ><td>整形168（医美汇）</td><td style="color:lightgreen">总计<?php echo $tmczx168 ?>单</td></th>
 <th align="center" ><td>美帮网</td><td style="color:lightgreen">总计<?php echo $tmcmbw ?>单</td></th>
@@ -620,7 +620,7 @@ $tmqd12data = mysqli_fetch_assoc($tmqd12cresult);
 <th align="center" ><td>米多网</td><td style="color:lightgreen">总计<?php echo $tmcmdw ?>单</td></th>
 	
   </tr>	 
-<tr >
+<tr  onmouseover="this.style.backgroundColor='rgba(207,107,19,0.6)'" onmouseout="this.style.backgroundColor=''" >
 <th align="center" ><td>美丫网</td><td style="color:lightgreen">总计<?php echo $tmcmyw ?>单</td></th>
 <th align="center" ><td>韩式爱美</td><td style="color:lightgreen">总计<?php echo $tmchsam ?>单</td></th>
 <th align="center" ><td>U美-整形驿站</td><td style="color:lightgreen">总计<?php echo $tmcum ?>单</td></th>
@@ -790,7 +790,7 @@ if ($result && mysqli_num_rows($result)) {
  
 //}
   while ($row = mysqli_fetch_assoc($result)) {
-      echo '<tr>';
+      echo '<tr  onmouseover="this.style.backgroundColor=\'rgba(45,183,222,0.6)\'" onmouseout="this.style.backgroundColor=\'\'">';
 //if ($_SESSION['limits']==1)	{  echo '<td><input type="checkbox" name="id[]" value="' . $row['id'] . '" /></td>';}
  //echo '<td><input type="checkbox" name="id[]" value="' . $row['id'] . '" /></td>';
       echo '<td>' . $row['id'] . '</td>';	 

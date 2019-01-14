@@ -198,7 +198,7 @@ $eqdname=preg_replace('|[0-9a-zA-Z/<>=.:_"]+|','',$eqdname);
 	
 
 </form>
-                     </div>
+ </div>
 	
 </body>
 	
