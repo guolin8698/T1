@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>上传文件</title>
+<!--script language="javascript">
+    function $(id){
+     return document.getElementById(id);
+    }
+function ok(){
+     $("logoimg").src = $("filename").value;
+}
+</script-->
+
+	</head>
+ 
+<body onUnload="opener.location.reload()">
+<table border="0" align="center" cellpadding="0" cellspacing="0"> 
+  <tr> 
+    <td height="45" align="center" valign="middle">
+<form action="filesupload.php?submit=1" method="post" enctype="multipart/form-data" name="form1"> 请选择上传的文件 
+<input type="file" name="filename" id="filename" onchange="ok()"> 
+<!-- MAX_FILE_SIZE must precede the file input field -->
+<input type="hidden" name="MAX_FILE_SIZE" value="30554400" />
+<input type="submit" name="Submit" value="上传"> 
+</form>
+</td> 
+  </tr> 
+</table> 
+<font  align="center" color="red">注意：上传文件大小不能超过30M，否则将无法上传！！！</font><br/> 
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

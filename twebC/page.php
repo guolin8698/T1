@@ -111,17 +111,7 @@ session_start();
 
 
 
-	<script>
-function show(){
-   var thistime = new Date().toLocaleString();
-   document.getElementById('areabox').innerHTML = thistime;
-}
-function showTime() {
-    setInterval(show, 1000);  //每秒刷新一次
 	
-}
-				
-</script>
 
 	
 	<script type="text/javascript">
@@ -189,14 +179,14 @@ text-decoration:none;
 	
 	
 </head>
-<body onload="showTime();" class="sidebar-expanded" style="">
+<body >
 	
 	
 	
 	
 	
 	
-	
+	<br>
 	
 	
 	
@@ -274,26 +264,32 @@ text-decoration:none;
 <div class="login">
    <div class="loginmain">
 	  
-	   <img src="images/Klogo.png" width="48" height="64"><br ;/>
+	   <img src="images/Klogo.png" width="48" height="64">
+	   <iframe id="righttop" width="290px" height="210px" frameborder="0" scrolling="no" style="float:right" src="righttop.php"></iframe>
+	   	   <br />
 	   
-	 <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三方信息管理系统</h2>
+	 <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三方信息管理系统</h2>     
 	   <br>
-	  <div class="newstime"><div id="areabox"></div></div>
-	   <div class="col-lg-6">
-	   <h4>
-     <input  type="button" value="添加数据" class="btn btn-danger" onClick="showadd();" />
-   </h4></div>
+	   
+	 
+	
 	 
 	   
-	   <div class="col-lg-6">
-	   <h4>
-     <input type="button" value="按日期查询" class="btn btn-danger " onClick="showsearch();" />
-   </h4></div>
+	   
 <br>  
 	   <h4>
      <input type="button" value="导出当前数据至EXCEL" class="btn btn-danger " onClick="javascript:location.href='downexcel.php'" />
    </h4> <form>
- 输入手机号：<input type="text" name="spnumber" id="spnumber" placeholder="输入手机号"><button id="spnumberb">查询</button><input id="rep" name="button" type="reset" value="重置">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	  项目内容查询：<input type="text" name="sproject" id="sproject" placeholder="请输入项目关键字"><button id="sprojectb">查询</button><input id="reproject" name="button" type="reset" value="重置"></form>
+ 输入手机号：<input type="text" name="spnumber" id="spnumber" placeholder="输入手机号"><button id="spnumberb">查询</button><input id="rep" name="button" type="reset" value="重置">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	  项目内容查询：<input type="text" name="sproject" id="sproject" placeholder="请输入项目关键字"><button id="sprojectb">查询</button><input id="reproject" name="button" type="reset" value="重置">
+	   
+	 
+	   
+     <input type="button" value="按日期查询" class="btn btn-danger " onClick="showsearch();" />
+	  &nbsp; <input  type="button" value="添加数据" class="btn btn-danger" onClick="showadd();" />
+   
+	   	   
+	   
+	   </form>
 	   <br>
 <?php
 	  
@@ -1332,6 +1328,23 @@ function etest(id){
 
 	   </script>
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	   <script>
 		
