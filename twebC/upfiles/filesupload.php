@@ -43,7 +43,7 @@ $file2 = $path.time().$file1;
 $flag=1; 
 }//END IF 
  else{
-	echo "<script>alert('上传文件超出大小限制');location.href='fupload.htm'; </script>"; 
+	echo "<script>alert('上传文件超出大小限制');location.href='righttop.php'; </script>"; 
 	 exit;
 	 
  }
